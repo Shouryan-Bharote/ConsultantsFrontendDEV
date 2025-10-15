@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rebeccapurple;
+}
+.hero-section {
+    height: 100vh;
+    background: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
