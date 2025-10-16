@@ -1,0 +1,209 @@
+/* --- Base Styles (Desktop First: 769px and up) --- */
+.ContactSection {
+  padding: 100px 40px; /* Use more flexible padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background-color: #e3f3f68f;
+  width: 100%;
+  max-width: 1185px; /* Use max-width instead of fixed width */
+  height: auto; /* Use auto height for flexibility */
+  min-height: 657px;
+  border-radius: 20px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.text {
+  flex: 1; /* Allow text section to take up available space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text h1 {
+  font-size: 96px;
+  color: #315cfd;
+  text-align: center;
+}
+
+hr {
+  width: 8px;
+  height: 443px;
+  background: #000;
+  border: none; /* Reset default HR border */
+}
+
+.form {
+  flex: 1; /* Allow form section to take up available space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 510px; /* Set a max-width for the form itself */
+}
+
+/* Universal styles for form elements */
+input,
+select,
+textarea {
+  width: 100%;
+  border-radius: 38px;
+  background: #fff;
+  border: 1px solid #ccc; /* Add a subtle border for better visibility */
+  font-size: 16px;
+  padding: 18px 25px;
+  box-sizing: border-box;
+  outline-color: #0249ac; /* Better outline on focus */
+}
+
+.phoneInput {
+  display: flex;
+  flex-direction: row; /* This is the default, but we state it for clarity */
+  gap: 8px;
+  align-items: center;
+}
+
+.country {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 25px;
+  border-radius: 38px;
+  background: #fff;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#tel {
+  flex: 1; /* Allow phone input to fill remaining space */
+}
+
+#Trainings {
+  color: #555; /* Set a default color */
+}
+
+#Trainings option {
+  color: #000;
+}
+
+#message {
+  height: 120px;
+  border-radius: 16px; /* Use the specific border-radius */
+  resize: vertical; /* Allow users to resize vertically */
+}
+
+button {
+  width: 224px;
+  height: 66px;
+  padding: 14px 20px; /* Adjusted padding */
+  justify-content: center;
+  align-items: center;
+  align-self: center; /* Center the button in the form */
+  border-radius: 47px;
+  border: 4px solid #6bd4f2;
+  background: #0249ac;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+button:hover {
+  background-color: #6bd4f2;
+  border-color: #0249ac; /* Changed border color on hover */
+  color: black;
+}
+
+
+/* --- Responsive Styles --- */
+
+/* ## Tablets (max-width: 768px) ## */
+@media (max-width: 768px) {
+  .ContactSection {
+    padding: 60px 20px;
+  }
+
+  .Container {
+    flex-direction: column; /* Stack items vertically */
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .text h1 {
+    font-size: 72px;
+  }
+
+  /* Change HR to be a horizontal line */
+  hr {
+    width: 90%;
+    height: 4px;
+    margin: 0 auto; /* Center the horizontal line */
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .form form {
+    max-width: none; /* Allow form to be full width */
+  }
+}
+
+/* ## Mobile Devices (max-width: 600px) ## */
+@media (max-width: 600px) {
+  .text h1 {
+    font-size: 56px;
+  }
+
+  button {
+    width: 100%; /* Make button full width for easy tapping */
+    max-width: 280px;
+  }
+}
+
+/* ## Small Mobile Devices (max-width: 480px) ## */
+@media (max-width: 480px) {
+  .ContactSection {
+    padding: 40px 15px;
+  }
+  .Container {
+    padding: 20px;
+  }
+
+  .text h1 {
+    font-size: 42px;
+  }
+
+  hr {
+    height: 2px;
+  }
+
+  .form form {
+    gap: 20px;
+  }
+
+  /*
+    THE FIX: The problematic rule for .phoneInput was here.
+    It has been removed to keep the country code and input inline.
+  */
+}
