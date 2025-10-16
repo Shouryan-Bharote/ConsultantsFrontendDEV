@@ -4,7 +4,7 @@ import React from "react";
 import HeroSection from "../components/home/HeroSection.jsx";
 // import AboutSection from "../components/home/AboutSection.jsx";
 // import TrainingSection from "../components/home/TrainingSection.jsx";
-// import TrainersSection from "../components/home/TrainersSection.jsx";
+import TrainersSection from "../components/home/TrainersSection.jsx";
 // import Testimonials from "../components/home/Testimonials.jsx";
 // import Usp from "../components/home/UspSection.jsx";
 import ContactSection from "../components/home/ContactSection.jsx";
@@ -20,10 +20,10 @@ const Home = () => {
   return (
     <div className="home-page">
       {/* Hero Section */}
-      <section id="hero">
+      {/* <section id="hero">
         <HeroSection />
       </section>
-      {/* <section>
+      <section>
         <TrainingSection />
       </section> */}
 
@@ -31,9 +31,9 @@ const Home = () => {
         <CoursesSection />
       </section> */}
 
-      {/* <section>
+      <section>
         <TrainersSection />
-      </section> */}
+      </section>
 
       {/* <section>
         <Associations />

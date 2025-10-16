@@ -1,0 +1,204 @@
+.trainers-section {
+  width: 100%;
+  height: auto;
+  background-color: #00627E;
+  padding: 3rem 0;
+  border-bottom-right-radius: 227px;
+}
+
+.trainers-header {
+  text-align: center;
+  justify-content: center;
+}
+
+.trainers-title {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.trainers-subtitle {
+  color: #C9FFFF;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.trainers-description {
+  color: #e5e7eb;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Trainer grid */
+.trainers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1.5rem; 
+  column-gap: 1.5rem;
+  margin: 3rem auto;
+  width: fit-content;
+  justify-items: center;
+  padding: 0 2rem;
+}
+
+/* Card Styles - Desktop */
+.trainer-card {
+  background-color: #C2F2FF;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  padding: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  width: 20vw;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trainer-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Card header styling for desktop */
+.card-header {
+  margin-top: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem; /* 🔹 This creates the gap between name and image */
+  width: 100%;
+}
+
+.trainer-name {
+  color: #001943;
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-align: center;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
+  width: 100%;
+}
+
+/* Trainer image - Desktop */
+.trainer-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.view-all-button {
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.view-all-button:hover {
+  background: white;
+  color: #0f766e;
+}
+
+/* Responsive grid behavior */
+@media (max-width: 1024px) {
+  .trainers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .trainer-card {
+    width: 250px; 
+  }
+  
+  .trainer-image {
+    height: 240px; 
+  }
+}
+
+@media (max-width: 640px) {
+  .trainers-section {
+    border-bottom-right-radius: 0;
+  }
+  
+  .trainers-grid {
+    grid-template-columns: 1fr;
+    margin: 2rem auto; 
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+  
+  /* Mobile horizontal card layout */
+  .trainer-card {
+    width: 100%;
+    max-width: 500px;
+    height: 15vh;
+    flex-direction: row; /* 🔹 Horizontal on mobile */
+    align-items: center;
+    justify-content: flex-start; /* 🔹 Left aligned */
+    padding: 1.5rem;
+    gap: 1.5rem; /* 🔹 Gap between image and name */
+  }
+  
+  .trainer-card:hover {
+    transform: translateY(0);
+  }
+  
+  /* Circular image on mobile */
+  .image-container {
+    flex-grow: 0;
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    order: 1; /* 🔹 Image first */
+  }
+  
+  .trainer-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Card header on mobile */
+  .card-header {
+    flex-grow: 1;
+    text-align: center; /* 🔹 Centered text */
+    margin: 0; /* 🔹 Remove margin on mobile */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 2; /* 🔹 Name second */
+  }
+  
+  .trainer-name {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* color: #001943; */
+  }
+  
+  .trainers-title,
+  .trainers-subtitle {
+    font-size: 1.8rem; 
+  }
+}
