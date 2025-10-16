@@ -1,0 +1,188 @@
+/* --- Base Styles (Desktop First: 769px and up) --- */
+.container {
+  border-radius: 0 200px;
+  background: #e3f3f6;
+  width: 100%;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  color: #001943;
+  font-family: "Montserrat", sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* Desktop Grid View */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 250px;
+  gap: 10px;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out, box-shadow 0.3s ease;
+}
+
+.grid-container.transitioning img {
+  opacity: 0;
+  transform: translateX(-20px);
+  pointer-events: none;
+}
+
+.grid-container img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific grid item placements for desktop */
+.grid-container img:nth-child(1),
+.grid-container img:nth-child(2),
+.grid-container img:nth-child(3),
+.grid-container img:nth-child(5),
+.grid-container img:nth-child(6),
+.grid-container img:nth-child(7),
+.grid-container img:nth-child(8),
+.grid-container img:nth-child(9) {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.grid-container img:nth-child(4) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+
+.arrow-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 25px;
+  padding-right: 152px;
+}
+
+.arrow-btn {
+  background-color: #0056d2;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background-color: #6bd4f2;
+  color: black;
+}
+
+/* --- Mobile Scrolling View --- */
+.mobile-scrolling-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.scrolling-row {
+  display: flex;
+  overflow-x: hidden; /* Hide scrollbar completely */
+  gap: 15px;
+}
+
+.scrolling-row img {
+  flex-shrink: 0;
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.scrolling-row img:hover {
+  transform: scale(1.05);
+}
+
+/* --- Responsive Styles --- */
+
+/* ## Tablets & Mobile (up to 768px) ## */
+@media (max-width: 768px) {
+  .container {
+    border-radius: 0 100px;
+    padding: 3rem 1.5rem;
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+
+  /* HIDE THE BUTTONS ON MOBILE */
+  .arrow-buttons {
+    display: none;
+  }
+}
+
+/* ## Weird/Large Mobile Devices (up to 600px) ## */
+@media (max-width: 600px) {
+  .container {
+    border-radius: 0 50px;
+    padding: 3rem 1rem;
+  }
+
+  h2 {
+    font-size: 36px;
+    line-height: 1.4;
+  }
+
+  .scrolling-row img {
+    width: 200px;
+    height: 160px;
+  }
+}
+
+/* ## Normal Mobile Devices (up to 480px) ## */
+@media (max-width: 480px) {
+  .container {
+    border-radius: 0;
+    padding: 2rem 1rem;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .scrolling-row img {
+    width: 180px;
+    height: 140px;
+  }
+}

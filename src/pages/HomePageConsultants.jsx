@@ -7,9 +7,9 @@ import HeroSection from "../components/home/HeroSection.jsx";
 import TrainersSection from "../components/home/TrainersSection.jsx";
 // import Testimonials from "../components/home/Testimonials.jsx";
 // import Usp from "../components/home/UspSection.jsx";
-// import ContactSection from "../components/home/ContactSection.jsx";
+import ContactSection from "../components/home/ContactSection.jsx";
 // import CoursesSection from "../components/home/CoursesSection.jsx";
-// import TrainingMemories from "../components/home/TrainingMemories.jsx";
+import TrainingMemories from "../components/home/TrainingMemories.jsx";
 // import Associations from "../components/home/Associations.jsx";
 // import Footer from "../components/common/Footer.jsx";
 
@@ -25,23 +25,23 @@ const Home = () => {
       </section>
       <section>
         <TrainingSection />
-      </section>
+      </section> */}
 
-      <section>
+      {/* <section>
         <CoursesSection />
       </section> */}
 
-      <section>
+      {/* <section>
         <TrainersSection />
-      </section>
+      </section> */}
 
       {/* <section>
         <Associations />
-      </section>
+      </section> */}
 
-      <section>
+      {/* <section>
         <Usp />
-      </section>
+      </section> */}
 
       <section>
         <ContactSection />
@@ -51,11 +51,11 @@ const Home = () => {
         <TrainingMemories />
       </section>
 
-      <section >
+      {/* <section >
         <Testimonials />
-      </section>
+      </section> */}
 
-      <section >
+      {/* <section >
         <AboutSection />
       </section> */}
 
