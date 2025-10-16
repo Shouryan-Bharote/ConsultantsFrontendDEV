@@ -31,9 +31,9 @@ const Home = () => {
         <CoursesSection />
       </section> */}
 
-      {/* <section>
+      <section>
         <TrainersSection />
-      </section> */}
+      </section>
 
       {/* <section>
         <Associations />
