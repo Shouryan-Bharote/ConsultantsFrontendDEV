@@ -4,7 +4,6 @@ import "./TrainingSection.css"
 const TrainingSection = () => {
   return (
     <div>
-      
     </div>
   )
 }
