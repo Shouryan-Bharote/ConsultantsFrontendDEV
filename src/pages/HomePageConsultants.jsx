@@ -40,9 +40,9 @@ const Home = () => {
         <Associations />
       </section> */}
 
-      {/* <section>
-        <Usp />
-      </section> */}
+      <section>
+        <UspSection />
+      </section>
 
       <section>
         <ContactSection />
