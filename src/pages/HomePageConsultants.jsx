@@ -21,9 +21,9 @@ const Home = () => {
   return (
     <div className="home-page">
       {/* Hero Section */}
-      {/* <section id="hero">
+      <section id="hero">
         <HeroSection />
-      </section> */}
+      </section>
       <section>
         <TrainingSection />
       </section> 
