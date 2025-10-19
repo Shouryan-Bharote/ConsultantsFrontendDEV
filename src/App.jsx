@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes/AppRoutes.jsx";
 // import Navbar from "./components/common/Navbar";
-// import Footer from "./components/common/Footer";
+import Footer from "./components/common/Footer";
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <main className="flex-grow">
           <AppRoutes />
         </main>
-        {/* <Footer /> */}
+         <Footer />
       </div>
     </BrowserRouter>
   );
