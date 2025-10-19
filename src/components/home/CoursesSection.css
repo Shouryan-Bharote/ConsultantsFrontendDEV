@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* --- Main Container --- */
+.course-section {
+    background-color: #0249AC;
+    text-align: center;
+    /* PADDING: 40px top, 80px bottom, 50px sides */
+    padding: 60px 50px 120px 50px; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+.course-title {
+    font-size: 64px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 50px;
+    margin-top: 0; 
+}
+
+.course-container {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    gap: 30px; 
+    max-width: 1300px; 
+    margin: 0 auto;
+    flex-wrap: wrap; 
+}
+
+.course-card {
+    width: 399px; 
+    height: 457px; 
+    
+    background-color: white; 
+    color: #000000;
+    border-radius: 25px;
+    padding: 30px;
+    text-align: left;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.course-card h3 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.course-card p {
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Button Styles (Solid Blue) --- */
+.course-info-btn {
+    width: 162px;
+    height: 66px;
+    font-size: 24px;
+    font-weight: 600;
+    align-self: center; 
+    
+    background-color:#315CFD; 
+    color: white; 
+    border: 3px solid #0047AB; 
+    border-radius: 33px; 
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.course-info-btn:hover {
+    background-color: #003366;
+    border-color: #003366;
+}
+
+
+/* --- Media Queries --- */
+
+/* Tablet screens (767px and below) */
+@media (max-width: 767px) {
+    .course-section {
+        padding: 40px 20px 60px 20px; 
+    }
+    
+    .course-title {
+        font-size: 48px;
+    }
+
+    .course-container {
+        flex-direction: row; 
+        justify-content: center; 
+        gap: 20px;
+    }
+
+    .course-card {
+        width: calc(50% - 10px); 
+        height: auto;
+        min-height: 350px;
+        max-width: none;
+    }
+    
+    .course-card h3 {
+        font-size: 28px;
+    }
+}
+
+/* Mobile screens (480px and below) */
+@media (max-width: 480px) {
+    .course-title {
+        font-size: 36px;
+    }
+
+    .course-container {
+        flex-direction: column; 
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .course-card {
+        width: 90%; 
+        padding: 20px; 
+    }
+
+    .course-info-btn {
+        width: 162px;
+        height: 66px;
+        font-size: 18px;
+    }
+}

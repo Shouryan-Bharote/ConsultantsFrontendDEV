@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Container for the entire section */
+.trainings {
+    background-color: #E3F3F6;
+    text-align: center;
+    padding: 60px 50px;
+    border-radius: 0 0 0 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Section titles */
+.trainings h2 {
+    font-size: 64px;
+    font-weight: 700;
+    color: #082b61;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.trainings p {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Navigation buttons container (Desktop Default) */
+.carousel-nav {
+    position: absolute;
+    top: 100px; /* Moved down slightly from the top */
+    right: 50px; /* Adjusted right margin */
+    display: flex;
+    gap: 30px;
+    z-index: 10;
+}
+
+/* Individual navigation buttons (Desktop Default) */
+.next-btn,
+.back-btn {
+    background-color: #ECECEC;
+    border: 2px solid #0047AB;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.next-btn img,
+.back-btn img {
+    width: 25px;
+    filter: brightness(0) invert(0);
+}
+
+.next-btn:hover,
+.back-btn:hover {
+    background-color: #d2e7ff;
+    border-color: #003366;
+}
+
+/* Slider container */
+.slider {
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+}
+
+/* The list of cards that will be transformed */
+.slider ul {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 1716px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.slider li {
+    list-style: none;
+    width: 429px;
+    flex-shrink: 0;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* Card styles */
+.training-card {
+    background-color: #0047ab;
+    color: white;
+    border-radius: 25px;
+    padding: 30px;
+    width: 399px;
+    height: 457px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    z-index: 1;
+    position: relative;
+}
+
+.training-card h3 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.training-card p {
+    font-size: 16px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+/* The "Get Info" button */
+.info-btn {
+    background: none;
+    border: 3px solid #6BD4F2;
+    color: white;
+    border-radius: 33px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.3s;
+    width: 162px;
+    height: 66px;
+    font-size: 24px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-btn:hover {
+    background: white;
+    color: #0047ab;
+    border-color: #6BD4F2;
+}
+
+/* -----   Media Query   ------ */
+
+/* Tablet screens (767px and below) */
+
+@media (max-width: 767px) {
+
+    .trainings {
+        padding: 40px 10px 80px 10px;
+    }
+    .carousel-nav {
+        display: none;
+    }
+    .slider ul {
+        width: 200%;
+        margin: 0;
+    }
+    .slider li {
+        width: 25%;
+        padding: 0 10px;
+    }
+    .training-card {
+        width: 330px;
+        height: 450px;
+        margin: 0;
+    }
+}
+
+
+
+/* ------------------------------------------- */
+
+/* Mobile screens (480px and below) */
+@media (max-width: 480px) {
+
+    .trainings {
+        padding: 30px 10px 60px 10px;
+    }
+    .trainings h2 {
+        font-size: 36px;
+    }
+    .trainings p {
+        font-size: 15px;
+    }
+
+    /* 3. Show ONE card at a time */
+
+    .slider ul {
+        width: 400%;
+        margin: 0;
+
+    }
+    .slider li {
+        width: 25%;
+        padding: 0 10px;
+
+    }
+    .training-card {
+
+        width: 90%;
+        margin: 0 auto;
+        height: auto;
+
+    }
+
+    .info-btn {
+        width: 120px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
