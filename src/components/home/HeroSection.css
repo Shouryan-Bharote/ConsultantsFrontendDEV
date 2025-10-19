@@ -34,11 +34,11 @@
 }
 
 .hero p {
-  font-size: 2.1rem;
+  font-size: 1.7rem;
   line-height: 1.6;
   color: white;
   display: inline-block;
-  margin-top: -70px;
+  margin-top: 20px;
 }
 
 .hero-buttons {
@@ -59,6 +59,7 @@
   transition: 0.3s ease;
   width: 95%;
   height: 70px;
+  margin-top: 30px;
 }
 
 .btn-primary:hover {
@@ -74,8 +75,11 @@
   font-size: 1.3rem;
   cursor: pointer;
   transition: 0.3s ease;
-  width: 40%;
+  width: 50%;
   height: 70px;
+  font-weight: 550;
+  margin-top: 30px;
+
 }
 
 .btn-outline:hover {
@@ -129,136 +133,37 @@
   }
   .hero p {
     font-size: 1rem;
-    margin-top: -5px;
+    margin-top: 10px;
     margin-left: -25px;
-
   }
-
   .hero-buttons {
     display: flex;
+    gap: 30px;
   }
 
   .btn-outline {
     font-size: 0.7rem;
-    width: 60%;
+    width:50%;
     margin-left: -15px;
-    margin-top: 10px;
+    margin-top: 30px;
     font-weight: 700;
     height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .btn-primary{
-    width: 60%;
+    width: 47%;
     font-size: 0.7rem;
     font-weight: 1000;
     margin-left: -25px;
-    margin-top: 10px;
+    margin-top: 30px;
     height: 50px;
+    padding-right: 15px;
   }
 
   .hero-image img {
 display: none;  }
 }
 
-/* Responsive 600px */
-@media (max-width: 600px) {
-  .hero {
-    padding: 30px 5%;
-    border-bottom-right-radius: 0px;
-
-  }
-  .hero-content{
-    margin: 20px;
-    height: 300px;
-  }
-  .hero h1 {
-    font-size: 2.9rem;
-    margin-top: 15px;
-    margin-left: -25px;
-  }
-  .hero h1 span{
-    margin-top: -10px;
-  }
-  .hero p {
-    font-size: 1rem;
-    margin-top: -5px;
-    margin-left: -25px;
-
-  }
-
-  .hero-buttons {
-     display: flex;
-  }
-
-  .btn-outline {
-    font-size: 0.7rem;
-    width: 60%;
-    margin-left: -15px;
-    margin-top: 10px;
-    font-weight: 700;
-    height: 50px;
-  }
-  .btn-primary{
-    width: 60%;
-    font-size: 0.7rem;
-    font-weight: 1000;
-    margin-left: -25px;
-    margin-top: 10px;
-    height: 50px;
-  }
-
-  .hero-image img {
-display: none;  }
-}
-
-/* Responsive 768px */
-@media (max-width: 768px) {
-  .hero {
-    padding: 30px 5%;
-    border-bottom-right-radius: 0px;
-
-  }
-  .hero-content{
-    margin: 20px;
-    height: 300px;
-  }
-  .hero h1 {
-    font-size: 2.9rem;
-    margin-top: 15px;
-    margin-left: -25px;
-  }
-  .hero h1 span{
-    margin-top: -10px;
-  }
-  .hero p {
-    font-size: 1rem;
-    margin-top: -5px;
-    margin-left: -25px;
-
-  }
-
-  .hero-buttons {
-     display: flex;
-  }
-
-  .btn-outline {
-    font-size: 0.7rem;
-    width: 60%;
-    margin-left: -15px;
-    margin-top: 10px;
-    font-weight: 700;
-    height: 50px;
-  }
-  .btn-primary{
-    width: 60%;
-    font-size: 0.7rem;
-    font-weight: 1000;
-    margin-left: -25px;
-    margin-top: 10px;
-    height: 50px;
-  }
-
-  .hero-image img {
-display: none;  }
-}
 
 
