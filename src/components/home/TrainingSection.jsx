@@ -20,7 +20,7 @@ const TrainingSection = () => {
 
   
   const IsMobile = viewportWidth <= 480;
-  const IsTablet = viewportWidth > 480 && viewportWidth <= 767;
+  const IsTablet = viewportWidth > 480 && viewportWidth <= 768;
 
 
   const MAX_SCROLLABLE_LIMIT = -1 * (CARD_COUNT - 1) * BASE_STEP; 
@@ -43,20 +43,20 @@ const TrainingSection = () => {
   // --- Touch/Swipe Handlers ---
 
   const handleTouchStart = (e) => {
-    if (viewportWidth <= 767) {
+    if (viewportWidth <= 768) {
       setTouchStart(e.targetTouches[0].clientX);
       setTouchEnd(e.targetTouches[0].clientX); 
     }
   };
 
   const handleTouchMove = (e) => {
-    if (viewportWidth <= 767) {
+    if (viewportWidth <= 768) {
       setTouchEnd(e.targetTouches[0].clientX);
     }
   };
 
   const handleTouchEnd = () => {
-    if (viewportWidth > 767 || touchStart === 0) return;
+    if (viewportWidth > 768 || touchStart === 0) return;
 
     const minSwipeDistance = 50; 
     const distance = touchStart - touchEnd; 
