@@ -2,6 +2,7 @@ import React from "react";
 
 // Import all your components
 import HeroSection from "../components/home/HeroSection.jsx";
+import UspSection from "../components/home/UspSection.jsx";
 // import AboutSection from "../components/home/AboutSection.jsx";
 import TrainingSection from "../components/home/TrainingSection.jsx";
 import TrainersSection from "../components/home/TrainersSection.jsx";
@@ -20,9 +21,9 @@ const Home = () => {
   return (
     <div className="home-page">
       {/* Hero Section */}
-      {/* <section id="hero">
+      <section id="hero">
         <HeroSection />
-      </section> */}
+      </section>
       <section>
         <TrainingSection />
       </section> 
@@ -39,9 +40,9 @@ const Home = () => {
         <Associations />
       </section> */}
 
-      {/* <section>
-        <Usp />
-      </section> */}
+      <section>
+        <UspSection />
+      </section>
 
       <section>
         <ContactSection />
