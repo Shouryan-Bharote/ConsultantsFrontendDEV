@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./TrainingMemories.css";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import SplitText from "../reactbit/splitText" ;
+import SplitText from "../reactbit/splitText";
 
 const handleAnimationComplete = () => {
-  console.log('All letters have animated!');
+  console.log("All letters have animated!");
 };
 
 // --- Data Structure ---
@@ -35,7 +35,6 @@ const imageSets = [
   ],
 ];
 
-
 const TrainingMemories = () => {
   const [currentSetIndex, setCurrentSetIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -52,51 +51,61 @@ const TrainingMemories = () => {
   const rowImages1 = imagesInCurrentSet.slice(0, 3);
   const rowImages2 = imagesInCurrentSet.slice(3, 6);
   const rowImages3 = imagesInCurrentSet.slice(6, 9);
-  
+
   // Duplicate images for infinite scroll effect
   const duplicatedRow1 = [...rowImages1, ...rowImages1];
   const duplicatedRow2 = [...rowImages2, ...rowImages2];
   const duplicatedRow3 = [...rowImages3, ...rowImages3];
 
-
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Effect for automatic scrolling on mobile
   useEffect(() => {
     if (!isMobile) return;
 
-    const scrollSpeed = 0.5; // Adjust scroll speed here
-    
+    const row1 = row1Ref.current;
+    const row2 = row2Ref.current;
+    const row3 = row3Ref.current;
+
+    if (!row1 || !row2 || !row3) return;
+
+    const scrollSpeed = 0.5;
+    let animationFrameId;
+
     // Set initial scroll position for the backward-scrolling row
-    if (row2Ref.current) {
-        row2Ref.current.scrollLeft = row2Ref.current.scrollWidth / 2;
-    }
+    row2.scrollLeft = row2.scrollWidth / 2;
 
-    const interval = setInterval(() => {
-        // Forward scroll (left to right)
-        [row1Ref, row3Ref].forEach(ref => {
-            if (ref.current) {
-                ref.current.scrollLeft += scrollSpeed;
-                if (ref.current.scrollLeft >= ref.current.scrollWidth / 2) {
-                    ref.current.scrollLeft = 0;
-                }
-            }
-        });
+    const animateScroll = () => {
+      // Forward scroll (left to right)
+      row1.scrollLeft += scrollSpeed;
+      if (row1.scrollLeft >= row1.scrollWidth / 2) {
+        row1.scrollLeft = 0;
+      }
 
-        // Backward scroll (right to left)
-        if (row2Ref.current) {
-            row2Ref.current.scrollLeft -= scrollSpeed;
-            if (row2Ref.current.scrollLeft <= 0) {
-                row2Ref.current.scrollLeft = row2Ref.current.scrollWidth / 2;
-            }
-        }
-    }, 20); // Milliseconds between scroll updates
+      row3.scrollLeft += scrollSpeed;
+      if (row3.scrollLeft >= row3.scrollWidth / 2) {
+        row3.scrollLeft = 0;
+      }
 
-    return () => clearInterval(interval); // Cleanup on unmount or dependency change
+      // Backward scroll (right to left)
+      row2.scrollLeft -= scrollSpeed;
+      if (row2.scrollLeft <= 0) {
+        row2.scrollLeft = row2.scrollWidth / 2;
+      }
+
+      // Request the next frame
+      animationFrameId = requestAnimationFrame(animateScroll);
+    };
+
+    // Start the animation
+    animateScroll();
+
+    // Cleanup function to cancel the animation when the component unmounts
+    return () => cancelAnimationFrame(animationFrameId);
   }, [isMobile, currentSetIndex]); // Rerun when switching to mobile or changing image set
 
   const handleAnimation = (newIndex, currentDirection) => {
@@ -149,22 +158,34 @@ const TrainingMemories = () => {
 
       {/* RENDER GRID OR SCROLLER BASED ON isMobile STATE */}
       {isMobile ? (
-         <div className="mobile-scrolling-container">
-            <div ref={row1Ref} className="scrolling-row">
-                {duplicatedRow1.map((image, index) => (
-                <img key={`${image.id}-${index}`} src={image.src} alt={image.alt} />
-                ))}
-            </div>
-            <div ref={row2Ref} className="scrolling-row">
-                {duplicatedRow2.map((image, index) => (
-                <img key={`${image.id}-${index}`} src={image.src} alt={image.alt} />
-                ))}
-            </div>
-            <div ref={row3Ref} className="scrolling-row">
-                {duplicatedRow3.map((image, index) => (
-                <img key={`${image.id}-${index}`} src={image.src} alt={image.alt} />
-                ))}
-            </div>
+        <div className="mobile-scrolling-container">
+          <div ref={row1Ref} className="scrolling-row">
+            {duplicatedRow1.map((image, index) => (
+              <img
+                key={`${image.id}-${index}`}
+                src={image.src}
+                alt={image.alt}
+              />
+            ))}
+          </div>
+          <div ref={row2Ref} className="scrolling-row">
+            {duplicatedRow2.map((image, index) => (
+              <img
+                key={`${image.id}-${index}`}
+                src={image.src}
+                alt={image.alt}
+              />
+            ))}
+          </div>
+          <div ref={row3Ref} className="scrolling-row">
+            {duplicatedRow3.map((image, index) => (
+              <img
+                key={`${image.id}-${index}`}
+                src={image.src}
+                alt={image.alt}
+              />
+            ))}
+          </div>
         </div>
       ) : (
         <div className={gridClasses}>
@@ -176,19 +197,12 @@ const TrainingMemories = () => {
 
       {/* Buttons */}
       <div className="arrow-buttons">
-        <button
-          className="arrow-btn left"
-          onClick={handlePrev}
-          disabled={isTransitioning}
-        >
-          <ArrowLeft />
+        <button onClick={handlePrev} disabled={isTransitioning} class="btn">
+          &larr;
         </button>
-        <button
-          className="arrow-btn right"
-          onClick={handleNext}
-          disabled={isTransitioning}
-        >
-          <ArrowRight />
+        <button onClick={handleNext} disabled={isTransitioning} class="btn">
+          {" "}
+          &rarr;
         </button>
       </div>
     </section>

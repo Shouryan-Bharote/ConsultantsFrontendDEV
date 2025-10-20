@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import "./TrainersSection.css"
 import trainerImage from "../../assets/images/trainersprofile.png"
 
 const TrainersSection = () => {
   const [showAll, setShowAll] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const sectionRef = useRef(null); // 🔹 Reference to the section
 
   // Full list of all trainers
   const allTrainers = [
@@ -22,9 +24,30 @@ const TrainersSection = () => {
     { id: 12, name: "John Martin", image: trainerImage }
   ];
 
-  const displayedTrainers = showAll ? allTrainers : allTrainers.slice(0, 6);
+  // Check if screen is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 640);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Show 2 cards on mobile, 6 on desktop/tablet initially
+  const initialCount = isMobile ? 2 : 6;
+  const displayedTrainers = showAll ? allTrainers : allTrainers.slice(0, initialCount);
 
   const handleViewAll = () => {
+    // If collapsing (View Less), scroll to top of section
+    if (showAll) {
+      sectionRef.current?.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    }
     setShowAll(!showAll);
   };
 
@@ -65,7 +88,7 @@ const TrainersSection = () => {
   };
 
   return (
-    <div className='trainers-section'>
+    <div className='trainers-section' ref={sectionRef}> {/* 🔹 Added ref */}
       <div className="trainers-header">
         <h1 className='trainers-title'>Meet the Amazing Trainers behind the </h1>
         <h2 className='trainers-subtitle'>Infinova Consultants</h2>
