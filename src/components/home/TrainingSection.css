@@ -9,7 +9,6 @@ body {
     background-color: #E3F3F6;
     text-align: center;
     padding: 60px 50px;
-    border-radius: 0 0 0 150px;
     position: relative;
     overflow: hidden;
 }
@@ -33,7 +32,7 @@ body {
 /* Navigation buttons container (Desktop Default) */
 .carousel-nav {
     position: absolute;
-    top: 100px; /* Moved down slightly from the top */
+    top: 140px; /* Moved down slightly from the top */
     right: 50px; /* Adjusted right margin */
     display: flex;
     gap: 30px;
@@ -152,7 +151,7 @@ body {
 
 /* Tablet screens (767px and below) */
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 
     .trainings {
         padding: 40px 10px 80px 10px;
@@ -216,5 +215,7 @@ body {
         width: 120px;
         height: 50px;
         font-size: 18px;
+        left: 0;
+        align-self: flex-start;
     }
 }

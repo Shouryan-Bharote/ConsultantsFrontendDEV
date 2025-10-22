@@ -112,9 +112,9 @@
     width: 40%;
   }
 
-/* Responsive for 480px */
+/* Responsive for 600px */
 
-@media (max-width: 480px) {
+ @media (max-width: 600px) {
   .hero {
     padding: 30px 5%;
     border-bottom-right-radius: 0px;
@@ -132,7 +132,7 @@
     margin-top: -10px;
   }
   .hero p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-top: 10px;
     margin-left: -25px;
   }
@@ -158,12 +158,126 @@
     margin-left: -25px;
     margin-top: 30px;
     height: 50px;
-    padding-right: 15px;
+    padding-right: 22px;
   }
 
   .hero-image img {
 display: none;  }
 }
+
+ 
+
+/* Responsive for 601px to 899*/
+
+@media (min-width: 601px) and (max-width: 899px) {
+  .hero {
+     padding: 30px 5%;
+     border-bottom-right-radius: 60px;
+    /* min-height: 100vh; */
+    justify-content: center;
+    margin-right: 200px;
+    min-height: 5vh;
+    width: 100%;
+  }
+
+  .hero-content {
+    margin-left: 0;
+    max-width: 100%;
+
+  }
+
+  .hero h1 {
+    font-size: 5rem;
+    margin-top: 30px;
+    margin-left: 0;
+  }
+
+  .hero h1 span {
+    margin-top: -15px;
+  }
+
+  .hero p {
+    font-size: 1.6rem;
+    margin-top: 30px;
+    margin-left: 0;
+    line-height: 1.5;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 25px;
+  }
+   .btn-outline {
+    font-size: 0.7rem;
+    width:40%;
+    margin-left: -5px;
+    margin-top: 30px;
+    font-weight: 700;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .btn-primary{
+    width: 40%;
+    font-size: 0.9rem;
+    font-weight: 1000;
+    margin-left: -5px;
+    margin-top: 30px;
+    height: 50px;
+    padding-right: 22px;
+  }
+
+  .hero-image img {
+    display: none;
+  }
+}
+
+
+/* Responsive for 901px to 1499px */
+@media (min-width: 901px) and (max-width: 1499px) {
+  .hero-image{
+    display: none0;
+  }
+  .hero{
+    border-bottom-right-radius: 60px;
+    min-height: 100vh;
+    justify-content: center;
+    min-height: 10vh;
+  }
+   .hero h1 {
+    font-size: 6.9rem;
+    margin-top: 15px;
+    margin-left: -110px;
+  }
+ .hero h1 span{
+    margin-top: -10px;
+  }
+  .hero p {
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-left:  -110px;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 15px;
+    margin-left: -110px;
+}
+}
+@media (max-width: 1500px){
+  .hero-image{
+    display: none;
+  }
+}
+
+
+
+
+
+
+
 
 
 

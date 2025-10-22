@@ -80,10 +80,10 @@ h2 {
   justify-content: flex-end;
   gap: 15px;
   margin-top: 25px;
-  padding-right: 152px;
+  padding-right: 165px;
 }
 
-.arrow-btn {
+.btn {
   background-color: #0056d2;
   color: white;
   border: none;
@@ -115,8 +115,9 @@ h2 {
 
 .scrolling-row {
   display: flex;
-  overflow-x: hidden; /* Hide scrollbar completely */
+  overflow-x: hidden;
   gap: 15px;
+  scroll-behavior: auto; /* <-- ADD THIS LINE */
 }
 
 .scrolling-row img {
