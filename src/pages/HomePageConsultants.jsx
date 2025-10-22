@@ -2,14 +2,15 @@ import React from "react";
 
 // Import all your components
 import HeroSection from "../components/home/HeroSection.jsx";
- import AboutSection from "../components/home/AboutSection.jsx";
-// import TrainingSection from "../components/home/TrainingSection.jsx";
-// import TrainersSection from "../components/home/TrainersSection.jsx";
+import UspSection from "../components/home/UspSection.jsx";
+import AboutSection from "../components/home/AboutSection.jsx";
+import TrainingSection from "../components/home/TrainingSection.jsx";
+import TrainersSection from "../components/home/TrainersSection.jsx";
 // import Testimonials from "../components/home/Testimonials.jsx";
 // import Usp from "../components/home/UspSection.jsx";
-// import ContactSection from "../components/home/ContactSection.jsx";
-// import CoursesSection from "../components/home/CoursesSection.jsx";
-// import TrainingMemories from "../components/home/TrainingMemories.jsx";
+import ContactSection from "../components/home/ContactSection.jsx";
+import CoursesSection from "../components/home/CoursesSection.jsx";
+import TrainingMemories from "../components/home/TrainingMemories.jsx";
 // import Associations from "../components/home/Associations.jsx";
 // import Footer from "../components/common/Footer.jsx";
 
@@ -23,9 +24,9 @@ const Home = () => {
       <section id="hero">
         <HeroSection />
       </section>
-      {/* <section>
+      <section>
         <TrainingSection />
-      </section>
+      </section> 
 
       <section>
         <CoursesSection />
@@ -35,12 +36,12 @@ const Home = () => {
         <TrainersSection />
       </section>
 
-      <section>
+      {/* <section>
         <Associations />
-      </section>
+      </section> */}
 
       <section>
-        <Usp />
+        <UspSection />
       </section>
 
       <section>
@@ -51,15 +52,17 @@ const Home = () => {
         <TrainingMemories />
       </section>
 
-      <section >
+      {/* <section >
         <Testimonials />
-      </section>  */}
+      </section> */}
 
-      <section >
+       <section >
         <AboutSection />
       </section> 
 
 
+      {/* Footer */}
+      {/* <Footer /> */}
     </div>
   );
 };

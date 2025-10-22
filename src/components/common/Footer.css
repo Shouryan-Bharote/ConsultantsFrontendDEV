@@ -228,11 +228,11 @@
 /* Mobile screens <= 480px */
 @media (max-width: 480px) {
   .contact-container {
-    flex-direction: column;
-    padding: 2rem 1rem;
-    gap: 2rem;
     height: auto;
+    min-height: 100vh;
+    background-color: #e4efff;
   }
+   
   .form-group1 {
   flex: 1;
   display: flex;
@@ -306,8 +306,11 @@
 
   /* Footer mobile styles */
   .footer-container {
-    font-size: 0.875rem;
-    padding: 0.75rem 0;
+    /* font-size: 0.875rem;
+    padding: 0.75rem 0; */
+    margin-bottom: 0;
+    background-color: #000;
+    border: none;
   }
 }
 
