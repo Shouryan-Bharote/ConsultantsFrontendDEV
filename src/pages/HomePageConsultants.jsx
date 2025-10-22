@@ -3,7 +3,7 @@ import React from "react";
 // Import all your components
 import HeroSection from "../components/home/HeroSection.jsx";
 import UspSection from "../components/home/UspSection.jsx";
-// import AboutSection from "../components/home/AboutSection.jsx";
+import AboutSection from "../components/home/AboutSection.jsx";
 import TrainingSection from "../components/home/TrainingSection.jsx";
 import TrainersSection from "../components/home/TrainersSection.jsx";
 // import Testimonials from "../components/home/Testimonials.jsx";
@@ -56,9 +56,9 @@ const Home = () => {
         <Testimonials />
       </section> */}
 
-      {/* <section >
+       <section >
         <AboutSection />
-      </section> */}
+      </section> 
 
 
       {/* Footer */}
