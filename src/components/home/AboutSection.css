@@ -1,0 +1,215 @@
+/* Main container for the entire section */
+.explore-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 2rem;
+  background-color: #ffffff;
+  font-family: Montserrat;
+  height: auto;
+}
+
+/* Wrapper for the two-column layout */
+.explore-section-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+}
+
+/* Left column styling */
+.explore-left h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+/* Right column styling */
+.explore-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.vertical-divider {
+  width: 15px;
+  height: 330px;
+  background-color: black;
+  border: 7px;
+  margin-right: 5rem;
+}
+
+/* Text and button container */
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.text-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: black;
+  margin: 0 0 2rem 0;
+  font-weight: 500;
+}
+
+/* Explore Button */
+.explore-button {
+  background-color: #1976D2;
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin: 1.5rem auto 0 auto;
+}
+
+.explore-button:hover {
+  background-color: #1565C0;
+}
+
+/* === Mobile screens <= 480px === */
+@media (max-width: 480px) {
+  .explore-section-container {
+    padding: 2.5rem 1rem;
+  }
+
+  .explore-section-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .explore-left h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .explore-right {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .vertical-divider {
+    display: none;
+  }
+
+  .text-content p {
+    font-size: 14px;
+  }
+
+  .explore-button {
+    font-size: 0.95rem;
+    padding: 0.9rem 2.2rem;
+  }
+}
+
+/* === Devices between 481px and 600px === */
+@media (min-width: 481px) and (max-width: 600px) {
+  .explore-section-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .explore-section-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .explore-left h1 {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+
+  .explore-right {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vertical-divider {
+    display: none;
+  }
+
+  .text-content p {
+    font-size: 15px;
+  }
+
+  .explore-button {
+    font-size: 0.95rem;
+    padding: 0.9rem 2.2rem;
+  }
+}
+
+/* === Devices between 601px and 768px === */
+@media (min-width: 601px) and (max-width: 768px) {
+  .explore-section-container {
+    padding: 4rem 2rem;
+  }
+
+  .explore-section-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .explore-left h1 {
+    font-size: 4.5rem;
+    text-align: center;
+  }
+
+  .explore-right {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vertical-divider {
+    display: none;
+  }
+
+  .text-content p {
+    font-size: 15px;
+  }
+
+  .explore-button {
+    font-size: 0.95rem;
+    padding: 0.9rem 2.2rem;
+  }
+}
+
+/* === Devices 769px and above === */
+@media (min-width: 769px) {
+  .explore-section-container {
+    padding: 6rem 3rem;
+  }
+
+  .explore-section-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .explore-left h1 {
+    font-size: 6rem;
+  }
+
+  .vertical-divider {
+    display: block;
+    height: 330px;
+  }
+
+  .text-content p {
+    font-size: 16px;
+  }
+
+  .explore-button {
+    font-size: 1rem;
+    padding: 1rem 2.5rem;
+  }
+}
